@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎂 HAPPY BIRTHDAY JUNAID 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Pacifico&family=Fredoka+One&family=Righteous&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff2d8e;
+    --yellow: #ffdd00;
+    --cyan: #00f5ff;
+    --green: #39ff14;
+    --purple: #bf00ff;
+    --orange: #ff6b00;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    font-family: 'Boogaloo', cursive;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E⭐%3C/text%3E%3C/svg%3E"), auto;
+  }
+
+  /* ===== ANIMATED BG ===== */
+  .bg-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(45deg, #1a0033, #001a33, #001a00, #330019);
+    background-size: 400% 400%;
+    animation: bgShift 4s ease infinite;
+  }
+  .bg-wrap::after {
+    content:'';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(255,45,142,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(0,245,255,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 60% 80%, rgba(191,0,255,0.15) 0%, transparent 60%);
+  }
+  @keyframes bgShift {
+    0%,100%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+  }
+
+  .wordart {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(42px, 10vw, 90px);
+    background: linear-gradient(90deg, #ff2d8e, #ffdd00, #00f5ff, #39ff14, #bf00ff, #ff6b00, #ff2d8e);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowText 2s linear infinite, wordBounce 0.5s ease-in-out infinite alternate;
+    text-shadow: none;
+    filter: drop-shadow(0 0 20px rgba(255,45,142,0.8));
+    display: block;
+    line-height: 1.2;
+  }
+  @keyframes rainbowText {
+    0%{background-position:0% 50%}
+    100%{background-position:300% 50%}
+  }
+  @keyframes wordBounce {
+    from{transform:scale(1) rotate(-1deg)}
+    to{transform:scale(1.04) rotate(1deg)}
+  }
+
+  .subhead {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(20px, 5vw, 36px);
+    color: var(--yellow);
+    text-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--purple);
+    animation: shake 0.3s ease-in-out infinite alternate;
+    margin-top: 8px;
+    letter-spacing: 3px;
+  }
+  @keyframes shake {
+    from{transform:translateX(-2px) rotate(-0.5deg)}
+    to{transform:translateX(2px) rotate(0.5deg)}
+  }
+
+  /* ===== SLIDESHOW ===== */
+  .slideshow-wrap {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 0 16px;
+    position: relative;
+  }
+
+  .slide-frame {
+    border: 6px solid transparent;
+    border-radius: 12px;
+    background: linear-gradient(#0a0a0a,#0a0a0a) padding-box,
+                linear-gradient(90deg, var(--pink), var(--cyan), var(--yellow), var(--green), var(--pink)) border-box;
+    background-size: 300% 100%;
+    animation: borderRainbow 2s linear infinite;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(255,45,142,0.5), 0 0 80px rgba(0,245,255,0.3);
+  }
+  @keyframes borderRainbow {
+    0%{background-position:0% 50%}
+    100%{background-position:300% 50%}
+  }
+
+  .slide {
+    display: none;
+    position: relative;
+    aspect-ratio: 4/3;
+  }
+  .slide.active { display: block; }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s;
+  }
+  .slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 16px;
+  }
+  .slide-caption {
+    font-family: 'Righteous', cursive;
+    font-size: clamp(16px, 4vw, 28px);
+    color: white;
+    text-shadow: 2px 2px 0 var(--pink), -2px -2px 0 var(--cyan);
+    text-align: center;
+    animation: captionGlow 1s ease-in-out infinite alternate;
+  }
+  @keyframes captionGlow {
+    from{text-shadow: 2px 2px 0 var(--pink), 0 0 10px var(--pink)}
+    to{text-shadow: 2px 2px 0 var(--cyan), 0 0 20px var(--cyan)}
+  }
+
+  .slide-dots {
+    text-align: center;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #333;
+    cursor: pointer;
+    border: 2px solid var(--pink);
+    transition: all 0.3s;
+  }
+  .dot.active {
+    background: var(--pink);
+    box-shadow: 0 0 10px var(--pink);
+    transform: scale(1.3);
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 14px;
+  }
+  .nav-btn {
+    font-family: 'Fredoka One', cursive;
+    font-size: 18px;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s;
+  }
+  .nav-btn:active { transform: scale(0.95); }
+  .btn-prev {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: white;
+    box-shadow: 0 0 20px rgba(191,0,255,0.6);
+  }
+  .btn-next {
+    background: linear-gradient(135deg, var(--cyan), var(--green));
+    color: #000;
+    box-shadow: 0 0 20px rgba(0,245,255,0.6);
+  }
+  .nav-btn:hover { filter: brightness(1.2); transform: scale(1.07); }
+
+  /* Slide transition animation */
+  .slide.entering { animation: slideIn 0.4s ease forwards; }
+  .slide.leaving  { animation: slideOut 0.4s ease forwards; }
+  @keyframes slideIn  { from{opacity:0;transform:scale(0.85) rotate(-3deg)} to{opacity:1;transform:scale(1) rotate(0)} }
+  @keyframes slideOut { from{opacity:1;transform:scale(1)} to{opacity:0;transform:scale(1.1)} }
+
+  /* ===== MUSIC BTN ===== */
+  .music-section {
+    text-align: center;
+    margin: 24px 0;
+  }
+  #musicBtn {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--yellow), var(--orange));
+    color: #111;
+    cursor: pointer;
+    box-shadow: 0 0 30px rgba(255,221,0,0.7), 0 0 60px rgba(255,107,0,0.4);
+    animation: btnPulse 1s ease-in-out infinite alternate;
+    letter-spacing: 2px;
+  }
+  #musicBtn:hover { transform: scale(1.1) rotate(-2deg); filter: brightness(1.2); }
+  @keyframes btnPulse {
+    from{box-shadow: 0 0 20px rgba(255,221,0,0.5)}
+    to{box-shadow: 0 0 50px rgba(255,221,0,1), 0 0 80px rgba(255,107,0,0.7)}
+  }
+
+  /* ===== MESSAGE SECTION ===== */
+  .message-box {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 0 16px;
+  }
+  .message-inner {
+    background: rgba(255,255,255,0.04);
+    border: 3px solid;
+    border-image: linear-gradient(90deg, var(--pink), var(--yellow), var(--cyan)) 1;
+    border-radius: 16px;
+    padding: 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .message-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,45,142,0.05), rgba(0,245,255,0.05));
+    pointer-events: none;
+  }
+  .message-title {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(20px, 5vw, 32px);
+    color: var(--yellow);
+    text-shadow: 2px 2px 0 var(--orange);
+    margin-bottom: 16px;
+  }
+  .message-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(15px, 3vw, 20px);
+    color: #ddd;
+    line-height: 1.8;
+  }
+  .message-text .hi {
+    color: var(--cyan);
+    font-size: 1.3em;
+  }
+  .message-text .name {
+    color: var(--pink);
+    font-size: 1.2em;
+    display: inline-block;
+    animation: nameBounce 0.6s ease-in-out infinite alternate;
+  }
+  @keyframes nameBounce {
+    from{transform:translateY(0)} to{transform:translateY(-5px)}
+  }
+
+  /* ===== EMOJI RAIN ===== */
+  .emoji-rain {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 999;
+  }
+  .falling-emoji {
+    position: absolute;
+    top: -60px;
+    font-size: 28px;
+    animation: fall linear infinite;
+    opacity: 0.85;
+  }
+  @keyframes fall {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0.85; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ===== CONFETTI ===== */
+  .confetti-piece {
+    position: fixed;
+    width: 10px; height: 14px;
+    top: -20px;
+    border-radius: 2px;
+    animation: confettiFall linear infinite;
+    pointer-events: none;
+    z-index: 998;
+  }
+  @keyframes confettiFall {
+    0%   { transform: translateY(-20px) rotate(0deg) scaleX(1); }
+    50%  { transform: translateY(50vh) rotate(200deg) scaleX(-1); }
+    100% { transform: translateY(105vh) rotate(400deg) scaleX(1); opacity: 0; }
+  }
+
+  /* ===== GLITTER STARS ===== */
+  .glitter-star {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    animation: glitterFade 0.8s ease-out forwards;
+    font-size: 18px;
+  }
+  @keyframes glitterFade {
+    0%   { opacity: 1; transform: scale(0) rotate(0deg); }
+    50%  { opacity: 1; transform: scale(1.4) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0) rotate(360deg); }
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Righteous', cursive;
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+  footer span {
+    color: var(--pink);
+    animation: heartbeat 0.8s ease-in-out infinite alternate;
+    display: inline-block;
+  }
+  @keyframes heartbeat {
+    from{transform:scale(1)} to{transform:scale(1.4)}
+  }
+
+  /* ===== STARBURST ===== */
+  .starburst-wrap {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 10;
+    animation: spinStar 4s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes spinStar {
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+  }
+  .starburst {
+    width: 80px; height: 80px;
+    background: var(--yellow);
+    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .starburst-text {
+    font-family: 'Fredoka One', cursive;
+    font-size: 10px;
+    color: #111;
+    text-align: center;
+    line-height: 1.1;
+    animation: spinStar 4s linear infinite reverse;
+  }
+
+  /* ===== PHOTO COUNTER ===== */
+  .photo-counter {
+    font-family: 'Righteous', cursive;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 6px;
+    letter-spacing: 2px;
+  }
+
+  /* ===== AUTO SCROLL TEXT ===== */
+  .ticker-wrap {
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan), var(--green), var(--yellow));
+    padding: 10px 0;
+    margin: 20px 0;
+    white-space: nowrap;
+  }
+  .ticker-text {
+    display: inline-block;
+    animation: ticker 12s linear infinite;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    color: #111;
+    letter-spacing: 2px;
+  }
+  @keyframes ticker {
+    from{transform:translateX(100vw)}
+    to{transform:translateX(-100%)}
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:480px) {
+    .starburst-wrap { width:60px; }
+    .starburst { width:60px; height:60px; }
+    .starburst-text { font-size:8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-wrap"></div>
+
+<!-- Glitter stars follow cursor -->
+<div class="emoji-rain" id="emojiRain"></div>
+
+<!-- Starburst badge -->
+<div class="starburst-wrap">
+  <div class="starburst">
+    <div class="starburst-text">IT'S HIS DAY!!</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <span class="wordart">✨ HAPPY BIRTHDAY ✨</span>
+  <div class="subhead">🎉 J U N A I D 🎉</div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <span class="ticker-text">
+    🎂 HAPPY BIRTHDAY JUNAID 🎂 &nbsp;&nbsp;&nbsp; 🎉 YOU'RE AMAZING 🎉 &nbsp;&nbsp;&nbsp; 🥳 BEST DAY EVER 🥳 &nbsp;&nbsp;&nbsp; 🎈 WE LOVE YOU 🎈 &nbsp;&nbsp;&nbsp; 🌟 KING JUNAID 🌟 &nbsp;&nbsp;&nbsp; 💥 LET'S GOOOOO 💥 &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<!-- MUSIC BUTTON -->
+<div class="music-section">
+  <button id="musicBtn" onclick="toggleMusic()">🎵 PLAY BIRTHDAY MUSIC 🎵</button>
+</div>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-wrap">
+  <div class="slide-frame">
+    <div class="slide active" id="slide-0">
+      <img src="https://i.ibb.co/XZwpFt2L/372419ca18ff.jpg" alt="Junaid">
+      <div class="slide-overlay">
+        <div class="slide-caption">🌟 THE MAN HIMSELF 🌟</div>
+      </div>
+    </div>
+    <div class="slide" id="slide-1">
+      <img src="https://i.ibb.co/m5PFQh8X/53ef7ca0b79c.jpg" alt="Junaid">
+      <div class="slide-overlay">
+        <div class="slide-caption">🔥 STRAIGHT FIRE 🔥</div>
+      </div>
+    </div>
+    <div class="slide" id="slide-2">
+      <img src="https://i.ibb.co/j9WHj1CJ/536b887180df.jpg" alt="Junaid">
+      <div class="slide-overlay">
+        <div class="slide-caption">👑 KING ENERGY ONLY 👑</div>
+      </div>
+    </div>
+    <div class="slide" id="slide-3">
+      <img src="https://i.ibb.co/rKyWkByP/6c13fa29caba.jpg" alt="Junaid">
+      <div class="slide-overlay">
+        <div class="slide-caption">🎂 BIRTHDAY BOY 🎂</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-dots">
+    <div class="dot active" onclick="goTo(0)"></div>
+    <div class="dot" onclick="goTo(1)"></div>
+    <div class="dot" onclick="goTo(2)"></div>
+    <div class="dot" onclick="goTo(3)"></div>
+  </div>
+  <div class="photo-counter" id="photoCounter">📸 1 / 4</div>
+
+  <div class="slide-nav">
+    <button class="nav-btn btn-prev" onclick="prevSlide()">← PREV</button>
+    <button class="nav-btn btn-next" onclick="nextSlide()">NEXT →</button>
+  </div>
+</div>
+
+<!-- MESSAGE -->
+<div class="message-box">
+  <div class="message-inner">
+    <div class="message-title">💌 A Message For You 💌</div>
+    <p class="message-text">
+      <span class="hi">Yo,</span> <span class="name">JUNAID</span> 🎉<br><br>
+      Today is YOUR day, king! 👑<br>
+      May your year be as legendary as you are,<br>
+      your wifi always full bars 📶,<br>
+      your food always bussin' 🍔,<br>
+      and your vibe ALWAYS immaculate ✨<br><br>
+      We ride for you fr fr 🔥🔥🔥<br><br>
+      <span style="color:var(--yellow)">HAPPY BIRTHDAY BHAI!! 🎂🎈🥳</span>
+    </p>
+  </div>
+</div>
+
+<!-- TICKER 2 -->
+<div class="ticker-wrap" style="animation-direction:reverse;">
+  <span class="ticker-text" style="animation-direction:reverse; animation-duration:15s;">
+    💫 MAKE A WISH 💫 &nbsp;&nbsp;&nbsp; 🎊 CELEBRATE HARD 🎊 &nbsp;&nbsp;&nbsp; 🍰 EAT THE CAKE 🍰 &nbsp;&nbsp;&nbsp; 😂 STAY CRINGE 😂 &nbsp;&nbsp;&nbsp; ❤️ LOVE YOU JUNAID ❤️ &nbsp;&nbsp;&nbsp;
+  </span>
+</div>
+
+<footer>
+  Made with <span>❤️</span> for the one and only Junaid
+</footer>
+
+<!-- CONFETTI -->
+<div id="confettiContainer"></div>
+
+<script>
+// ============ SLIDESHOW ============
+let current = 0;
+const total = 4;
+let autoTimer;
+
+function goTo(n, dir='next') {
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('.dot');
+  slides[current].classList.remove('active','entering','leaving');
+  slides[current].classList.add('leaving');
+  setTimeout(()=>{ slides[current].classList.remove('leaving'); },400);
+  current = n;
+  slides[current].classList.add('active','entering');
+  setTimeout(()=>{ slides[current].classList.remove('entering'); },400);
+  dots.forEach((d,i)=>d.classList.toggle('active',i===current));
+  document.getElementById('photoCounter').textContent = `📸 ${current+1} / ${total}`;
+  resetAutoPlay();
+}
+
+function nextSlide() { goTo((current+1)%total,'next'); }
+function prevSlide() { goTo((current-1+total)%total,'prev'); }
+function resetAutoPlay() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(nextSlide, 3500);
+}
+resetAutoPlay();
+
+// ============ MUSIC (Web Audio API - Happy Birthday) ============
+let audioCtx = null;
+let playing = false;
+let noteScheduler = null;
+
+const notes = [
+  // Happy Birthday melody (freq, duration)
+  [261.63,0.3],[261.63,0.15],[293.66,0.45],[261.63,0.45],[349.23,0.45],[329.63,0.9],
+  [261.63,0.3],[261.63,0.15],[293.66,0.45],[261.63,0.45],[392.00,0.45],[349.23,0.9],
+  [261.63,0.3],[261.63,0.15],[523.25,0.45],[440.00,0.45],[349.23,0.45],[329.63,0.45],[293.66,0.9],
+  [466.16,0.3],[466.16,0.15],[440.00,0.45],[349.23,0.45],[392.00,0.45],[349.23,0.9]
+];
+
+function playHappyBirthday() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  let t = audioCtx.currentTime + 0.1;
+  function scheduleNote(freq, dur, start) {
+    const osc  = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, start);
+    gain.gain.setValueAtTime(0, start);
+    gain.gain.linearRampToValueAtTime(0.35, start+0.04);
+    gain.gain.linearRampToValueAtTime(0, start+dur-0.04);
+    osc.start(start); osc.stop(start+dur);
+  }
+  notes.forEach(([f,d])=>{ scheduleNote(f, d, t); t += d + 0.03; });
+  // Drum-ish accent
+  function kick(time) {
+    const osc = audioCtx.createOscillator();
+    const g   = audioCtx.createGain();
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.type='sine'; osc.frequency.setValueAtTime(120,time);
+    osc.frequency.exponentialRampToValueAtTime(40, time+0.15);
+    g.gain.setValueAtTime(0.6,time); g.gain.exponentialRampToValueAtTime(0.001,time+0.2);
+    osc.start(time); osc.stop(time+0.2);
+  }
+  for(let i=0;i<24;i++) kick(audioCtx.currentTime + 0.1 + i*0.38);
+  const totalDur = notes.reduce((a,[,d])=>a+d+0.03,0)*1000;
+  return totalDur;
+}
+
+function toggleMusic() {
+  const btn = document.getElementById('musicBtn');
+  if(!playing) {
+    const dur = playHappyBirthday();
+    playing = true;
+    btn.textContent = '🔇 STOP MUSIC 🔇';
+    btn.style.background = 'linear-gradient(135deg,#ff2d8e,#bf00ff)';
+    btn.style.color = 'white';
+    setTimeout(()=>{
+      playing = false;
+      btn.textContent = '🎵 PLAY AGAIN 🎵';
+      btn.style.background = 'linear-gradient(135deg,#ffdd00,#ff6b00)';
+      btn.style.color='#111';
+    }, dur);
+  } else {
+    if(audioCtx) audioCtx.close();
+    playing = false;
+    btn.textContent = '🎵 PLAY BIRTHDAY MUSIC 🎵';
+    btn.style.background = 'linear-gradient(135deg,#ffdd00,#ff6b00)';
+    btn.style.color = '#111';
+  }
+}
+
+// ============ EMOJI RAIN ============
+const emojis = ['🎂','🎉','🎈','🥳','⭐','✨','💫','🔥','👑','🎊','🍰','💥','🌟','💖','🎁'];
+const rain = document.getElementById('emojiRain');
+function spawnEmoji() {
+  const el = document.createElement('div');
+  el.className = 'falling-emoji';
+  el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  el.style.left = Math.random()*100+'vw';
+  el.style.fontSize = (20+Math.random()*20)+'px';
+  const dur = 4+Math.random()*4;
+  el.style.animationDuration = dur+'s';
+  el.style.animationDelay = '-'+Math.random()*dur+'s';
+  rain.appendChild(el);
+  setTimeout(()=>el.remove(), dur*1000+500);
+}
+setInterval(spawnEmoji, 300);
+for(let i=0;i<12;i++) spawnEmoji();
+
+// ============ CONFETTI ============
+const colors = ['#ff2d8e','#ffdd00','#00f5ff','#39ff14','#bf00ff','#ff6b00','#fff'];
+function spawnConfetti() {
+  const el = document.createElement('div');
+  el.className = 'confetti-piece';
+  el.style.left = Math.random()*100+'vw';
+  el.style.background = colors[Math.floor(Math.random()*colors.length)];
+  const dur = 3+Math.random()*4;
+  el.style.animationDuration = dur+'s';
+  el.style.animationDelay = '-'+Math.random()*dur+'s';
+  el.style.width  = (6+Math.random()*10)+'px';
+  el.style.height = (8+Math.random()*14)+'px';
+  el.style.transform = `rotate(${Math.random()*360}deg)`;
+  document.getElementById('confettiContainer').appendChild(el);
+  setTimeout(()=>el.remove(), dur*1000+500);
+}
+setInterval(spawnConfetti, 200);
+for(let i=0;i<20;i++) spawnConfetti();
+
+// ============ CURSOR GLITTER ============
+const glitterSymbols = ['✨','⭐','💫','🌟','✦','✧','*'];
+document.addEventListener('mousemove', e => {
+  if(Math.random()>0.55) return;
+  const el = document.createElement('div');
+  el.className = 'glitter-star';
+  el.textContent = glitterSymbols[Math.floor(Math.random()*glitterSymbols.length)];
+  el.style.left = e.clientX + (Math.random()*30-15) +'px';
+  el.style.top  = e.clientY + (Math.random()*30-15) +'px';
+  el.style.color = colors[Math.floor(Math.random()*colors.length)];
+  el.style.fontSize = (12+Math.random()*14)+'px';
+  el.style.position = 'fixed';
+  el.style.pointerEvents = 'none';
+  el.style.zIndex = 9999;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(), 900);
+});
+
+// Touch glitter for mobile
+document.addEventListener('touchmove', e => {
+  const t = e.touches[0];
+  const el = document.createElement('div');
+  el.className = 'glitter-star';
+  el.textContent = glitterSymbols[Math.floor(Math.random()*glitterSymbols.length)];
+  el.style.left = t.clientX+'px';
+  el.style.top  = t.clientY+'px';
+  el.style.color = colors[Math.floor(Math.random()*colors.length)];
+  el.style.fontSize = '20px';
+  el.style.position='fixed'; el.style.pointerEvents='none'; el.style.zIndex=9999;
+  document.body.appendChild(el);
+  setTimeout(()=>el.remove(),900);
+});
+</script>
+</body>
+</html>
