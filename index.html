@@ -1,687 +1,679 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎂 HAPPY BIRTHDAY JUNAID 🎂</title>
-<link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Pacifico&family=Fredoka+One&family=Righteous&display=swap" rel="stylesheet">
+
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --pink: #ff2d8e;
-    --yellow: #ffdd00;
-    --cyan: #00f5ff;
-    --green: #39ff14;
-    --purple: #bf00ff;
-    --orange: #ff6b00;
+    --bg: #0d0f14;
+    --bg2: #13151c;
+    --bg3: #1a1d27;
+    --bg4: #222535;
+    --accent: #1a6fd4;
+    --accent2: #2d88f0;
+    --blue: #3d8ef0;
+    --green: #2dcf8a;
+    --amber: #f5a623;
+    --text: #f0f2f8;
+    --text2: #8b90a8;
+    --text3: #555a72;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --r: 10px;
+    --r2: 14px;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* body, .wrap { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; } */
+  body, .wrap {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+  .wrap { display: flex; flex-direction: column; min-height: 600px; }
 
-  body {
-    background: #0a0a0a;
-    font-family: 'Boogaloo', cursive;
-    overflow-x: hidden;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext y='24' font-size='24'%3E⭐%3C/text%3E%3C/svg%3E"), auto;
+  /* NAV */
+  nav {
+    display: flex; align-items: center; gap: 4px;
+    padding: 0 20px; height: 56px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 10;
   }
+  .nav-logo {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 17px;
+    color: var(--accent); letter-spacing: -0.3px; margin-right: 20px;
+  }
+  .nav-logo span { color: var(--text); }
 
-  /* ===== ANIMATED BG ===== */
-  .bg-wrap {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(45deg, #1a0033, #001a33, #001a00, #330019);
-    background-size: 400% 400%;
-    animation: bgShift 4s ease infinite;
-  }
-  .bg-wrap::after {
-    content:'';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(255,45,142,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(0,245,255,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 60% 80%, rgba(191,0,255,0.15) 0%, transparent 60%);
-  }
-  @keyframes bgShift {
-    0%,100%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-  }
-
-  /* ===== HEADER ===== */
-  header {
-    text-align: center;
-    padding: 40px 20px 20px;
-    position: relative;
-  }
-
-  .wordart {
-    font-family: 'Pacifico', cursive;
-    font-size: clamp(42px, 10vw, 90px);
-    background: linear-gradient(90deg, #ff2d8e, #ffdd00, #00f5ff, #39ff14, #bf00ff, #ff6b00, #ff2d8e);
-    background-size: 300% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: rainbowText 2s linear infinite, wordBounce 0.5s ease-in-out infinite alternate;
-    text-shadow: none;
-    filter: drop-shadow(0 0 20px rgba(255,45,142,0.8));
-    display: block;
-    line-height: 1.2;
-  }
-  @keyframes rainbowText {
-    0%{background-position:0% 50%}
-    100%{background-position:300% 50%}
-  }
-  @keyframes wordBounce {
-    from{transform:scale(1) rotate(-1deg)}
-    to{transform:scale(1.04) rotate(1deg)}
-  }
-
-  .subhead {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(20px, 5vw, 36px);
-    color: var(--yellow);
-    text-shadow: 3px 3px 0 var(--pink), 6px 6px 0 var(--purple);
-    animation: shake 0.3s ease-in-out infinite alternate;
-    margin-top: 8px;
-    letter-spacing: 3px;
-  }
-  @keyframes shake {
-    from{transform:translateX(-2px) rotate(-0.5deg)}
-    to{transform:translateX(2px) rotate(0.5deg)}
-  }
-
-  /* ===== SLIDESHOW ===== */
-  .slideshow-wrap {
-    max-width: 700px;
-    margin: 30px auto;
-    padding: 0 16px;
-    position: relative;
-  }
-
-  .slide-frame {
-    border: 6px solid transparent;
-    border-radius: 12px;
-    background: linear-gradient(#0a0a0a,#0a0a0a) padding-box,
-                linear-gradient(90deg, var(--pink), var(--cyan), var(--yellow), var(--green), var(--pink)) border-box;
-    background-size: 300% 100%;
-    animation: borderRainbow 2s linear infinite;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(255,45,142,0.5), 0 0 80px rgba(0,245,255,0.3);
-  }
-  @keyframes borderRainbow {
-    0%{background-position:0% 50%}
-    100%{background-position:300% 50%}
-  }
-
-  .slide {
-    display: none;
-    position: relative;
-    aspect-ratio: 4/3;
-  }
-  .slide.active { display: block; }
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.5s;
-  }
-  .slide-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 16px;
-  }
-  .slide-caption {
-    font-family: 'Righteous', cursive;
-    font-size: clamp(16px, 4vw, 28px);
-    color: white;
-    text-shadow: 2px 2px 0 var(--pink), -2px -2px 0 var(--cyan);
-    text-align: center;
-    animation: captionGlow 1s ease-in-out infinite alternate;
-  }
-  @keyframes captionGlow {
-    from{text-shadow: 2px 2px 0 var(--pink), 0 0 10px var(--pink)}
-    to{text-shadow: 2px 2px 0 var(--cyan), 0 0 20px var(--cyan)}
-  }
-
-  .slide-dots {
-    text-align: center;
-    margin-top: 14px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  .dot {
-    width: 14px; height: 14px;
-    border-radius: 50%;
-    background: #333;
-    cursor: pointer;
-    border: 2px solid var(--pink);
-    transition: all 0.3s;
-  }
-  .dot.active {
-    background: var(--pink);
-    box-shadow: 0 0 10px var(--pink);
-    transform: scale(1.3);
-  }
-
-  .slide-nav {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 14px;
-  }
-  .nav-btn {
-    font-family: 'Fredoka One', cursive;
-    font-size: 18px;
-    padding: 10px 28px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.1s;
-  }
-  .nav-btn:active { transform: scale(0.95); }
-  .btn-prev {
-    background: linear-gradient(135deg, var(--purple), var(--pink));
-    color: white;
-    box-shadow: 0 0 20px rgba(191,0,255,0.6);
-  }
-  .btn-next {
-    background: linear-gradient(135deg, var(--cyan), var(--green));
-    color: #000;
-    box-shadow: 0 0 20px rgba(0,245,255,0.6);
-  }
-  .nav-btn:hover { filter: brightness(1.2); transform: scale(1.07); }
-
-  /* Slide transition animation */
-  .slide.entering { animation: slideIn 0.4s ease forwards; }
-  .slide.leaving  { animation: slideOut 0.4s ease forwards; }
-  @keyframes slideIn  { from{opacity:0;transform:scale(0.85) rotate(-3deg)} to{opacity:1;transform:scale(1) rotate(0)} }
-  @keyframes slideOut { from{opacity:1;transform:scale(1)} to{opacity:0;transform:scale(1.1)} }
-
-  /* ===== MUSIC BTN ===== */
-  .music-section {
-    text-align: center;
-    margin: 24px 0;
-  }
-  #musicBtn {
-    font-family: 'Fredoka One', cursive;
-    font-size: 22px;
-    padding: 14px 36px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(135deg, var(--yellow), var(--orange));
-    color: #111;
-    cursor: pointer;
-    box-shadow: 0 0 30px rgba(255,221,0,0.7), 0 0 60px rgba(255,107,0,0.4);
-    animation: btnPulse 1s ease-in-out infinite alternate;
-    letter-spacing: 2px;
-  }
-  #musicBtn:hover { transform: scale(1.1) rotate(-2deg); filter: brightness(1.2); }
-  @keyframes btnPulse {
-    from{box-shadow: 0 0 20px rgba(255,221,0,0.5)}
-    to{box-shadow: 0 0 50px rgba(255,221,0,1), 0 0 80px rgba(255,107,0,0.7)}
-  }
-
-  /* ===== MESSAGE SECTION ===== */
-  .message-box {
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 0 16px;
-  }
-  .message-inner {
-    background: rgba(255,255,255,0.04);
-    border: 3px solid;
-    border-image: linear-gradient(90deg, var(--pink), var(--yellow), var(--cyan)) 1;
-    border-radius: 16px;
-    padding: 28px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .message-inner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,45,142,0.05), rgba(0,245,255,0.05));
-    pointer-events: none;
-  }
-  .message-title {
-    font-family: 'Pacifico', cursive;
-    font-size: clamp(20px, 5vw, 32px);
-    color: var(--yellow);
-    text-shadow: 2px 2px 0 var(--orange);
-    margin-bottom: 16px;
-  }
-  .message-text {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(15px, 3vw, 20px);
-    color: #ddd;
-    line-height: 1.8;
-  }
-  .message-text .hi {
-    color: var(--cyan);
-    font-size: 1.3em;
-  }
-  .message-text .name {
-    color: var(--pink);
-    font-size: 1.2em;
-    display: inline-block;
-    animation: nameBounce 0.6s ease-in-out infinite alternate;
-  }
-  @keyframes nameBounce {
-    from{transform:translateY(0)} to{transform:translateY(-5px)}
-  }
-
-  /* ===== EMOJI RAIN ===== */
-  .emoji-rain {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 999;
-  }
-  .falling-emoji {
-    position: absolute;
-    top: -60px;
-    font-size: 28px;
-    animation: fall linear infinite;
-    opacity: 0.85;
-  }
-  @keyframes fall {
-    0%   { transform: translateY(0) rotate(0deg); opacity: 0.85; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-  }
-
-  /* ===== CONFETTI ===== */
-  .confetti-piece {
-    position: fixed;
-    width: 10px; height: 14px;
-    top: -20px;
-    border-radius: 2px;
-    animation: confettiFall linear infinite;
-    pointer-events: none;
-    z-index: 998;
-  }
-  @keyframes confettiFall {
-    0%   { transform: translateY(-20px) rotate(0deg) scaleX(1); }
-    50%  { transform: translateY(50vh) rotate(200deg) scaleX(-1); }
-    100% { transform: translateY(105vh) rotate(400deg) scaleX(1); opacity: 0; }
-  }
-
-  /* ===== GLITTER STARS ===== */
-  .glitter-star {
-    position: fixed;
-    pointer-events: none;
-    z-index: 1000;
-    animation: glitterFade 0.8s ease-out forwards;
-    font-size: 18px;
-  }
-  @keyframes glitterFade {
-    0%   { opacity: 1; transform: scale(0) rotate(0deg); }
-    50%  { opacity: 1; transform: scale(1.4) rotate(180deg); }
-    100% { opacity: 0; transform: scale(0) rotate(360deg); }
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    font-family: 'Righteous', cursive;
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-  }
-  footer span {
-    color: var(--pink);
-    animation: heartbeat 0.8s ease-in-out infinite alternate;
-    display: inline-block;
-  }
-  @keyframes heartbeat {
-    from{transform:scale(1)} to{transform:scale(1.4)}
-  }
-
-  /* ===== STARBURST ===== */
-  .starburst-wrap {
-    position: fixed;
-    top: 20px; right: 20px;
-    z-index: 10;
-    animation: spinStar 4s linear infinite;
-    pointer-events: none;
-  }
-  @keyframes spinStar {
-    from{transform:rotate(0deg)}
-    to{transform:rotate(360deg)}
-  }
-  .starburst {
-    width: 80px; height: 80px;
-    background: var(--yellow);
-    clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .starburst-text {
-    font-family: 'Fredoka One', cursive;
-    font-size: 10px;
-    color: #111;
-    text-align: center;
-    line-height: 1.1;
-    animation: spinStar 4s linear infinite reverse;
-  }
-
-  /* ===== PHOTO COUNTER ===== */
-  .photo-counter {
-    font-family: 'Righteous', cursive;
-    color: rgba(255,255,255,0.5);
-    font-size: 13px;
-    text-align: center;
-    margin-top: 6px;
-    letter-spacing: 2px;
-  }
-
-  /* ===== AUTO SCROLL TEXT ===== */
-  .ticker-wrap {
-    overflow: hidden;
-    background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan), var(--green), var(--yellow));
-    padding: 10px 0;
-    margin: 20px 0;
+  .nav-item {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 8px; cursor: pointer;
+    font-size: 13.5px; font-weight: 400; color: var(--text2);
+    transition: all 0.18s; border: 1px solid transparent;
     white-space: nowrap;
   }
-  .ticker-text {
-    display: inline-block;
-    animation: ticker 12s linear infinite;
-    font-family: 'Fredoka One', cursive;
-    font-size: 20px;
-    color: #111;
-    letter-spacing: 2px;
+  .nav-item:hover { background: var(--bg3); color: var(--text); }
+  .nav-item.active { background: var(--bg4); color: var(--text); border-color: var(--border2); }
+  .nav-item svg { opacity: 0.7; width: 15px; height: 15px; flex-shrink: 0; }
+  .nav-item.active svg { opacity: 1; }
+
+  .sos-nav {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 8px; cursor: pointer;
+    font-size: 13.5px; font-weight: 500; color: #fff;
+    background: var(--accent);
+    transition: all 0.18s; border: none;
+    margin-left: 2px;
   }
-  @keyframes ticker {
-    from{transform:translateX(100vw)}
-    to{transform:translateX(-100%)}
+  .sos-nav:hover { background: var(--accent2); transform: scale(1.02); }
+
+  .nav-spacer { flex: 1; }
+
+  .user-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 5px 10px 5px 5px; border-radius: 10px; cursor: pointer;
+    background: var(--bg3); border: 1px solid var(--border2);
+    transition: all 0.18s; position: relative;
+  }
+  .user-btn:hover { border-color: var(--border2); background: var(--bg4); }
+  .avatar {
+    width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #3d8ef0, #a855f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600; color: #fff; font-family: 'Syne', sans-serif;
+  }
+  .user-name { font-size: 13px; color: var(--text); font-weight: 500; }
+  .notif-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--accent);
+    position: absolute; top: 6px; right: 8px;
   }
 
-  /* ===== RESPONSIVE ===== */
-  @media(max-width:480px) {
-    .starburst-wrap { width:60px; }
-    .starburst { width:60px; height:60px; }
-    .starburst-text { font-size:8px; }
+  /* DROPDOWN */
+  .dropdown {
+    position: absolute; top: calc(100% + 8px); right: 0;
+    background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: var(--r2); padding: 8px; min-width: 200px;
+    display: none; z-index: 100;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.5);
   }
+  .dropdown.open { display: block; }
+  .drop-header { padding: 8px 10px 12px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+  .drop-name { font-size: 14px; font-weight: 500; color: var(--text); }
+  .drop-email { font-size: 12px; color: var(--text2); margin-top: 2px; }
+  .drop-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px; border-radius: 8px; cursor: pointer;
+    font-size: 13px; color: var(--text2); transition: all 0.15s;
+  }
+  .drop-item:hover { background: var(--bg4); color: var(--text); }
+  .notif-badge {
+    margin-left: auto; background: var(--accent); color: #fff;
+    font-size: 11px; padding: 1px 6px; border-radius: 20px; font-weight: 600;
+  }
+
+  /* MAIN */
+  main { flex: 1; padding: 24px 20px; max-width: 1100px; width: 100%; margin: 0 auto; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* SECTION HEADER */
+  .sec-head { margin-bottom: 20px; }
+  .sec-head h2 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 600; color: var(--text); }
+  .sec-head p { font-size: 14px; color: var(--text2); margin-top: 4px; }
+
+  /* SEARCH BAR */
+  .search-bar {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: var(--r); padding: 8px 14px; margin-bottom: 20px;
+  }
+  .search-bar input {
+    flex: 1; background: transparent; border: none; outline: none;
+    font-size: 14px; color: var(--text); font-family: 'DM Sans', sans-serif;
+  }
+  .search-bar input::placeholder { color: var(--text3); }
+
+  /* COURSE GRID */
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+
+  .course-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r2); overflow: hidden; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .course-card:hover { border-color: var(--border2); transform: translateY(-2px); background: var(--bg3); }
+
+  .course-thumb {
+    height: 110px; display: flex; align-items: center; justify-content: center;
+    font-size: 30px; position: relative; overflow: hidden;
+  }
+  .thumb-surgery { background: linear-gradient(135deg, #1a2040, #2a1a35); }
+  .thumb-cardio { background: linear-gradient(135deg, #1a1535, #2a1a1a); }
+  .thumb-neuro { background: linear-gradient(135deg, #0f1f2e, #1a2a20); }
+  .thumb-pharma { background: linear-gradient(135deg, #1f1a10, #2a1a0a); }
+
+  .thumb-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; background: rgba(255,255,255,0.08);
+  }
+  .prog-bar { height: 3px; background: var(--border); margin: 0; }
+  .prog-fill { height: 100%; border-radius: 0; transition: width 0.4s; }
+
+  .course-body { padding: 12px 14px; }
+  .course-title { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.4; margin-bottom: 6px; }
+  .course-sub { font-size: 12px; color: var(--text2); margin-bottom: 10px; }
+  .course-meta { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: var(--text3); }
+  .tag {
+    font-size: 11px; padding: 2px 8px; border-radius: 20px; font-weight: 500;
+    background: rgba(61,142,240,0.15); color: var(--blue);
+  }
+
+  /* SIMULATION */
+  .sim-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-bottom: 24px; }
+  .sim-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r2); padding: 18px; cursor: pointer;
+    transition: all 0.2s; position: relative; overflow: hidden;
+  }
+  .sim-card:hover { border-color: var(--border2); background: var(--bg3); transform: translateY(-2px); }
+  .sim-icon {
+    width: 44px; height: 44px; border-radius: var(--r); margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 20px;
+  }
+  .sim-card h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .sim-card p { font-size: 13px; color: var(--text2); line-height: 1.5; margin-bottom: 12px; }
+  .sim-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 6px 12px; border-radius: 7px; font-size: 12.5px; font-weight: 500;
+    cursor: pointer; border: 1px solid; transition: all 0.15s;
+  }
+  .badge-cert {
+    position: absolute; top: 14px; right: 14px;
+    font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600;
+    background: rgba(45,207,138,0.15); color: var(--green); border: 1px solid rgba(45,207,138,0.2);
+  }
+
+  /* LIVE UPDATES */
+  .updates-list { display: flex; flex-direction: column; gap: 10px; }
+  .update-item {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r2); padding: 14px 16px; display: flex; gap: 14px;
+    cursor: pointer; transition: all 0.2s; align-items: flex-start;
+  }
+  .update-item:hover { border-color: var(--border2); background: var(--bg3); }
+  .update-dot {
+    width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0;
+  }
+  .update-content h4 { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .update-content p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+  .update-time { font-size: 11.5px; color: var(--text3); margin-top: 6px; }
+  .update-tag {
+    display: inline-block; font-size: 10.5px; padding: 2px 7px; border-radius: 20px;
+    font-weight: 500; margin-bottom: 5px;
+  }
+
+  /* SOS SECTION */
+  .sos-wrap { text-align: center; padding: 20px 0 32px; }
+  .sos-big-btn {
+    display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 180px; height: 180px; border-radius: 50%; cursor: pointer;
+    background: var(--accent); border: 6px solid rgba(26,111,212,0.3);
+    outline: 12px solid rgba(26,111,212,0.1);
+    transition: all 0.22s;
+    position: relative;
+    box-shadow: none;
+  }
+  .sos-big-btn:hover { background: #1258b0; border-color: rgba(26,111,212,0.5); outline-color: rgba(26,111,212,0.2); transform: scale(1.04); }
+  .sos-big-btn:active { transform: scale(0.97); }
+  .sos-big-btn .sos-label { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 700; color: #fff; letter-spacing: 2px; }
+  .sos-big-btn .sos-sub { font-size: 11px; color: rgba(255,255,255,0.8); letter-spacing: 0.5px; margin-top: 3px; }
+
+  .sos-form {
+    margin: 28px auto 0; max-width: 460px; background: var(--bg2);
+    border: 1px solid var(--border); border-radius: var(--r2); padding: 20px;
+  }
+  .sos-form h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 14px; text-align: left; }
+  .form-row { margin-bottom: 12px; }
+  .form-row label { display: block; font-size: 12.5px; color: var(--text2); margin-bottom: 5px; }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%; background: var(--bg3); border: 1px solid var(--border2);
+    border-radius: var(--r); padding: 9px 12px; font-size: 13.5px;
+    color: var(--text); font-family: 'DM Sans', sans-serif; outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
+  .form-row textarea { height: 80px; resize: none; }
+  .form-submit {
+    width: 100%; padding: 11px; background: var(--accent); color: #fff;
+    border: none; border-radius: var(--r); font-size: 14px; font-weight: 500;
+    cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.15s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--accent2); }
+
+  .sos-history { max-width: 460px; margin: 20px auto 0; text-align: left; }
+  .sos-history h4 { font-size: 13px; color: var(--text2); margin-bottom: 10px; font-weight: 500; }
+  .sos-hist-item {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--r); padding: 10px 12px; margin-bottom: 8px; font-size: 13px;
+  }
+  .hist-status { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .hist-txt { color: var(--text2); }
+  .hist-time { margin-left: auto; font-size: 11px; color: var(--text3); }
+
+  /* STAT ROW */
+  .stat-row { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .stat-card {
+    flex: 1; min-width: 110px; background: var(--bg2);
+    border: 1px solid var(--border); border-radius: var(--r);
+    padding: 12px 14px;
+  }
+  .stat-label { font-size: 11.5px; color: var(--text3); margin-bottom: 5px; }
+  .stat-val { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 600; color: var(--text); }
+  .stat-val span { font-size: 13px; color: var(--text2); font-weight: 400; }
 </style>
-</head>
-<body>
 
-<div class="bg-wrap"></div>
+<div class="wrap">
+  <nav>
+    <div class="nav-logo">Disaster<span>RX</span></div>
 
-<!-- Glitter stars follow cursor -->
-<div class="emoji-rain" id="emojiRain"></div>
+    <div class="nav-item active" onclick="switchTab('modules', this)">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>
+      Modules
+    </div>
+    <div class="nav-item" onclick="switchTab('simulation', this)">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+      Simulation
+    </div>
+    <div class="nav-item" onclick="switchTab('updates', this)">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8a5 5 0 0 1 10 0"/><circle cx="8" cy="11" r="1"/><path d="M8 4v1M4.5 5.5l.7.7M11.5 5.5l-.7.7"/></svg>
+      Live Updates
+    </div>
+    <div class="sos-nav" onclick="switchTab('sos', document.querySelector('.nav-item.active'))">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="6"/><path d="M8 5v3M8 11v.5"/></svg>
+      SOS
+    </div>
 
-<!-- Starburst badge -->
-<div class="starburst-wrap">
-  <div class="starburst">
-    <div class="starburst-text">IT'S HIS DAY!!</div>
-  </div>
-</div>
+    <div class="nav-spacer"></div>
 
-<!-- HEADER -->
-<header>
-  <span class="wordart">✨ HAPPY BIRTHDAY ✨</span>
-  <div class="subhead">🎉 J U N A I D 🎉</div>
-</header>
+    <div class="user-btn" onclick="toggleDropdown(this)" style="position:relative;">
+      <div class="avatar">EP</div>
+      <div class="user-name">Epshita</div>
+      <div class="notif-dot"></div>
 
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <span class="ticker-text">
-    🎂 HAPPY BIRTHDAY JUNAID 🎂 &nbsp;&nbsp;&nbsp; 🎉 YOU'RE AMAZING 🎉 &nbsp;&nbsp;&nbsp; 🥳 BEST DAY EVER 🥳 &nbsp;&nbsp;&nbsp; 🎈 WE LOVE YOU 🎈 &nbsp;&nbsp;&nbsp; 🌟 KING JUNAID 🌟 &nbsp;&nbsp;&nbsp; 💥 LET'S GOOOOO 💥 &nbsp;&nbsp;&nbsp;
-  </span>
-</div>
-
-<!-- MUSIC BUTTON -->
-<div class="music-section">
-  <button id="musicBtn" onclick="toggleMusic()">🎵 PLAY BIRTHDAY MUSIC 🎵</button>
-</div>
-
-<!-- SLIDESHOW -->
-<div class="slideshow-wrap">
-  <div class="slide-frame">
-    <div class="slide active" id="slide-0">
-      <img src="https://i.ibb.co/XZwpFt2L/372419ca18ff.jpg" alt="Junaid">
-      <div class="slide-overlay">
-        <div class="slide-caption">🌟 THE MAN HIMSELF 🌟</div>
+      <div class="dropdown" id="userDropdown">
+        <div class="drop-header">
+          <div class="drop-name">Epshita P.</div>
+          <div class="drop-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b7d2c7c4dfdec3d6f7dad2d3dec699d2d3c2">[email&#160;protected]</a></div>
+        </div>
+        <div class="drop-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3 2.7-5 6-5s6 2 6 5"/></svg>
+          View profile
+        </div>
+        <div class="drop-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2l1.5 3 3.5.5-2.5 2.5.6 3.5L8 10l-3.1 1.5.6-3.5L3 5.5l3.5-.5z"/></svg>
+          Notifications
+          <span class="notif-badge">3</span>
+        </div>
+        <div class="drop-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 8V5l-5-3-5 3v3l5 5 5-5z"/></svg>
+          My certificates
+        </div>
+        <div class="drop-item" style="color:#1a6fd4;">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3h3v10h-3M7 11l-4-3 4-3M3 8h8"/></svg>
+          Sign out
+        </div>
       </div>
     </div>
-    <div class="slide" id="slide-1">
-      <img src="https://i.ibb.co/m5PFQh8X/53ef7ca0b79c.jpg" alt="Junaid">
-      <div class="slide-overlay">
-        <div class="slide-caption">🔥 STRAIGHT FIRE 🔥</div>
+  </nav>
+
+  <main>
+
+    <!-- MODULES -->
+    <div class="section active" id="sec-modules">
+      <div class="sec-head">
+        <h2>Your modules</h2>
+        <p>Continue where you left off</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-label">Enrolled</div><div class="stat-val">19 <span>courses</span></div></div>
+        <div class="stat-card"><div class="stat-label">Completed</div><div class="stat-val">2 <span>courses</span></div></div>
+        <div class="stat-card"><div class="stat-label">Hours</div><div class="stat-val">48 <span>hrs</span></div></div>
+        <div class="stat-card"><div class="stat-label">Streak</div><div class="stat-val">7 <span>days</span></div></div>
+      </div>
+      <div class="search-bar">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#555a72" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+        <input placeholder="Search courses...">
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <div class="course-thumb thumb-surgery"><div class="thumb-icon">🔬</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:65%; background: var(--blue);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Master Surgery with Dr. Najeeb</div>
+            <div class="course-sub">Dr. Najeeb Lectures</div>
+            <div class="course-meta"><span class="tag">Surgery</span><span>65%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-cardio"><div class="thumb-icon">❤️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:30%; background: var(--accent);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Clinical Pearls: Questions & Answers</div>
+            <div class="course-sub">Dr. Najeeb Lectures</div>
+            <div class="course-meta"><span class="tag">Clinical</span><span>30%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-neuro"><div class="thumb-icon">🧠</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:80%; background: var(--green);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Neuroanatomy Essentials</div>
+            <div class="course-sub">Dr. Najeeb Lectures</div>
+            <div class="course-meta"><span class="tag">Neuro</span><span>80%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb thumb-pharma"><div class="thumb-icon">💊</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:10%; background: var(--amber);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Pharmacology Masterclass</div>
+            <div class="course-sub">Dr. Najeeb Lectures</div>
+            <div class="course-meta"><span class="tag">Pharma</span><span>10%</span></div>
+          </div>
+        </div>
+
+        <!-- NEW DISASTER MANAGEMENT COURSES -->
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0f2040, #1a2d4a);"><div class="thumb-icon">🗺️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--blue);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Geographic Information Systems (GIS) for Disaster Management</div>
+            <div class="course-sub">Disaster Management Institute</div>
+            <div class="course-meta"><span class="tag">GIS</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1a1030, #0f2030);"><div class="thumb-icon">⚠️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--accent);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Disaster Risk Reduction (DRR)</div>
+            <div class="course-sub">UN-ISDR Certified</div>
+            <div class="course-meta"><span class="tag">Risk</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0a1f35, #152840);"><div class="thumb-icon">🚨</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--green);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Emergency Management</div>
+            <div class="course-sub">FEMA Curriculum</div>
+            <div class="course-meta"><span class="tag">Emergency</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1a2010, #202a10);"><div class="thumb-icon">🔍</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--amber);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Hazard Identification and Risk Assessment (HIRA)</div>
+            <div class="course-sub">Risk Analysis Academy</div>
+            <div class="course-meta"><span class="tag">HIRA</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1f1020, #2a1030);"><div class="thumb-icon">🧭</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--blue);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Crisis Management</div>
+            <div class="course-sub">Global Crisis Institute</div>
+            <div class="course-meta"><span class="tag">Crisis</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0f2520, #1a3020);"><div class="thumb-icon">🩺</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--green);"></div></div>
+          <div class="course-body">
+            <div class="course-title">First Aid and Basic Life Support (BLS)</div>
+            <div class="course-sub">Red Cross Certified</div>
+            <div class="course-meta"><span class="tag">BLS</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1a1a10, #252515);"><div class="thumb-icon">🔦</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--accent);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Search and Rescue Operations</div>
+            <div class="course-sub">SAR International</div>
+            <div class="course-meta"><span class="tag">SAR</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #101a30, #182535);"><div class="thumb-icon">📦</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--amber);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Humanitarian Logistics and Supply Chain Management</div>
+            <div class="course-sub">UNHCR Learning</div>
+            <div class="course-meta"><span class="tag">Logistics</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1a2510, #202e15);"><div class="thumb-icon">🏗️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--blue);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Post-Disaster Rehabilitation and Reconstruction</div>
+            <div class="course-sub">World Bank Institute</div>
+            <div class="course-meta"><span class="tag">Rehab</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0f1f30, #152840);"><div class="thumb-icon">🌍</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--green);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Climate Change Adaptation and Resilience</div>
+            <div class="course-sub">UNEP Certified</div>
+            <div class="course-meta"><span class="tag">Climate</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #151530, #1a1a3a);"><div class="thumb-icon">🛰️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--accent);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Remote Sensing and Satellite Applications</div>
+            <div class="course-sub">ESA Space Academy</div>
+            <div class="course-meta"><span class="tag">Remote</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0f2030, #102535);"><div class="thumb-icon">📡</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--amber);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Disaster Communication and Early Warning Systems</div>
+            <div class="course-sub">WMO Curriculum</div>
+            <div class="course-meta"><span class="tag">Comms</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #1a1020, #221530);"><div class="thumb-icon">🎖️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--blue);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Incident Command System (ICS)</div>
+            <div class="course-sub">NIMS Certified</div>
+            <div class="course-meta"><span class="tag">ICS</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #0f2025, #152030);"><div class="thumb-icon">🏥</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--green);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Public Health in Emergencies</div>
+            <div class="course-sub">WHO Global Campus</div>
+            <div class="course-meta"><span class="tag">PH</span><span>0%</span></div>
+          </div>
+        </div>
+        <div class="course-card">
+          <div class="course-thumb" style="background: linear-gradient(135deg, #151a30, #1a2035);"><div class="thumb-icon">🏙️</div></div>
+          <div class="prog-bar"><div class="prog-fill" style="width:0%; background: var(--accent);"></div></div>
+          <div class="course-body">
+            <div class="course-title">Urban Disaster Risk Management</div>
+            <div class="course-sub">UN-Habitat Institute</div>
+            <div class="course-meta"><span class="tag">Urban</span><span>0%</span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="slide" id="slide-2">
-      <img src="https://i.ibb.co/j9WHj1CJ/536b887180df.jpg" alt="Junaid">
-      <div class="slide-overlay">
-        <div class="slide-caption">👑 KING ENERGY ONLY 👑</div>
+
+    <!-- SIMULATION -->
+    <div class="section" id="sec-simulation">
+      <div class="sec-head">
+        <h2>Simulation & tests</h2>
+        <p>Practice cases, mock exams, and earn certifications</p>
+      </div>
+      <div class="sim-grid">
+        <div class="sim-card">
+          <div class="badge-cert">CERTIFIED</div>
+          <div class="sim-icon" style="background: rgba(61,142,240,0.12);">🩺</div>
+          <h3>Clinical case simulator</h3>
+          <p>Work through real-world patient cases and make diagnostic decisions under time pressure.</p>
+          <div class="sim-btn" style="background: rgba(61,142,240,0.1); border-color: rgba(61,142,240,0.25); color: var(--blue);">▶ Start case</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-icon" style="background: rgba(26,111,212,0.1);">📋</div>
+          <h3>Mock exam — USMLE Step 1</h3>
+          <p>Full-length timed exam with 200 questions. Detailed explanations after each block.</p>
+          <div class="sim-btn" style="background: rgba(26,111,212,0.1); border-color: rgba(26,111,212,0.25); color: var(--accent);">▶ Take exam</div>
+        </div>
+        <div class="sim-card">
+          <div class="badge-cert">CERTIFIED</div>
+          <div class="sim-icon" style="background: rgba(45,207,138,0.1);">🏆</div>
+          <h3>Surgery MCQ bank</h3>
+          <p>500+ topic-wise questions on surgical anatomy, procedures, and post-op care.</p>
+          <div class="sim-btn" style="background: rgba(45,207,138,0.1); border-color: rgba(45,207,138,0.25); color: var(--green);">▶ Practice</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-icon" style="background: rgba(245,166,35,0.1);">🧪</div>
+          <h3>Pharmacology sprint</h3>
+          <p>10-minute rapid-fire rounds on drug mechanisms, side effects, and contraindications.</p>
+          <div class="sim-btn" style="background: rgba(245,166,35,0.1); border-color: rgba(245,166,35,0.25); color: var(--amber);">▶ Sprint</div>
+        </div>
       </div>
     </div>
-    <div class="slide" id="slide-3">
-      <img src="https://i.ibb.co/rKyWkByP/6c13fa29caba.jpg" alt="Junaid">
-      <div class="slide-overlay">
-        <div class="slide-caption">🎂 BIRTHDAY BOY 🎂</div>
+
+    <!-- LIVE UPDATES -->
+    <div class="section" id="sec-updates">
+      <div class="sec-head">
+        <h2>Live updates</h2>
+        <p>Medical news, guideline changes, and platform announcements</p>
+      </div>
+      <div class="updates-list">
+        <div class="update-item">
+          <div class="update-dot" style="background: var(--accent);"></div>
+          <div class="update-content">
+            <div class="update-tag" style="background: rgba(26,111,212,0.12); color: var(--accent);">Breaking</div>
+            <h4>New AHA guidelines on antihypertensive therapy (2026)</h4>
+            <p>Updated thresholds for initiating drug therapy in stage 1 hypertension — key changes affecting clinical practice.</p>
+            <div class="update-time">2 hours ago · American Heart Association</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <div class="update-dot" style="background: var(--blue);"></div>
+          <div class="update-content">
+            <div class="update-tag" style="background: rgba(61,142,240,0.12); color: var(--blue);">Course update</div>
+            <h4>Surgery module — 3 new lectures added</h4>
+            <p>Dr. Najeeb has added a full segment on laparoscopic cholecystectomy complications.</p>
+            <div class="update-time">Yesterday · MedIQ Platform</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <div class="update-dot" style="background: var(--green);"></div>
+          <div class="update-content">
+            <div class="update-tag" style="background: rgba(45,207,138,0.12); color: var(--green);">Research</div>
+            <h4>Landmark trial: SGLT2 inhibitors reduce CKD progression by 34%</h4>
+            <p>NEJM publishes results from CREDENCE-2, with major implications for nephrology and cardiology management.</p>
+            <div class="update-time">Apr 8 · NEJM</div>
+          </div>
+        </div>
+        <div class="update-item">
+          <div class="update-dot" style="background: var(--amber);"></div>
+          <div class="update-content">
+            <div class="update-tag" style="background: rgba(245,166,35,0.12); color: var(--amber);">Exam alert</div>
+            <h4>USMLE Step 2 CK content blueprint updated for 2026</h4>
+            <p>NBME has revised the weight of clinical medicine topics — psychiatry and preventive medicine gain more coverage.</p>
+            <div class="update-time">Apr 7 · NBME</div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="slide-dots">
-    <div class="dot active" onclick="goTo(0)"></div>
-    <div class="dot" onclick="goTo(1)"></div>
-    <div class="dot" onclick="goTo(2)"></div>
-    <div class="dot" onclick="goTo(3)"></div>
-  </div>
-  <div class="photo-counter" id="photoCounter">📸 1 / 4</div>
+    <!-- SOS -->
+    <div class="section" id="sec-sos">
+      <div class="sec-head" style="text-align:center;">
+        <h2>Emergency SOS</h2>
+        <p>Request urgent academic or clinical support from our team</p>
+      </div>
+      <div class="sos-wrap">
+        <div class="sos-big-btn" onclick="document.getElementById('sosForm').scrollIntoView({behavior:'smooth'})">
+          <div class="sos-label">SOS</div>
+          <div class="sos-sub">TAP TO SEND</div>
+        </div>
+      </div>
 
-  <div class="slide-nav">
-    <button class="nav-btn btn-prev" onclick="prevSlide()">← PREV</button>
-    <button class="nav-btn btn-next" onclick="nextSlide()">NEXT →</button>
-  </div>
+      <div class="sos-form" id="sosForm">
+        <h3>Send an SOS request</h3>
+        <div class="form-row">
+          <label>Category</label>
+          <select>
+            <option>Academic doubt — urgent</option>
+            <option>Clinical case help</option>
+            <option>Exam emergency</option>
+            <option>Technical issue</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Subject</label>
+          <input placeholder="Brief subject line...">
+        </div>
+        <div class="form-row">
+          <label>Describe your issue</label>
+          <textarea placeholder="Explain what you need help with..."></textarea>
+        </div>
+        <button class="form-submit">Send SOS request →</button>
+      </div>
+
+      <div class="sos-history">
+        <h4>Previous requests</h4>
+        <div class="sos-hist-item">
+          <div class="hist-status" style="background: var(--green);"></div>
+          <div class="hist-txt">Help with brachial plexus anatomy — resolved</div>
+          <div class="hist-time">Apr 5</div>
+        </div>
+        <div class="sos-hist-item">
+          <div class="hist-status" style="background: var(--amber);"></div>
+          <div class="hist-txt">Step 1 exam schedule — in progress</div>
+          <div class="hist-time">Apr 7</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
 </div>
 
-<!-- MESSAGE -->
-<div class="message-box">
-  <div class="message-inner">
-    <div class="message-title">💌 A Message For You 💌</div>
-    <p class="message-text">
-      <span class="hi">Yo,</span> <span class="name">JUNAID</span> 🎉<br><br>
-      Today is YOUR day, king! 👑<br>
-      May your year be as legendary as you are,<br>
-      your wifi always full bars 📶,<br>
-      your food always bussin' 🍔,<br>
-      and your vibe ALWAYS immaculate ✨<br><br>
-      We ride for you fr fr 🔥🔥🔥<br><br>
-      <span style="color:var(--yellow)">HAPPY BIRTHDAY BHAI!! 🎂🎈🥳</span>
-    </p>
-  </div>
-</div>
-
-<!-- TICKER 2 -->
-<div class="ticker-wrap" style="animation-direction:reverse;">
-  <span class="ticker-text" style="animation-direction:reverse; animation-duration:15s;">
-    💫 MAKE A WISH 💫 &nbsp;&nbsp;&nbsp; 🎊 CELEBRATE HARD 🎊 &nbsp;&nbsp;&nbsp; 🍰 EAT THE CAKE 🍰 &nbsp;&nbsp;&nbsp; ❤️ LOVE YOU JUNAID ❤️ &nbsp;&nbsp;&nbsp;
-  </span>
-</div>
-
-<footer>
-  Made with <span>❤️</span> for the one and only Junaid
-</footer>
-
-<!-- CONFETTI -->
-<div id="confettiContainer"></div>
-
-<script>
-// ============ SLIDESHOW ============
-let current = 0;
-const total = 4;
-let autoTimer;
-
-function goTo(n, dir='next') {
-  const slides = document.querySelectorAll('.slide');
-  const dots   = document.querySelectorAll('.dot');
-  slides[current].classList.remove('active','entering','leaving');
-  slides[current].classList.add('leaving');
-  setTimeout(()=>{ slides[current].classList.remove('leaving'); },400);
-  current = n;
-  slides[current].classList.add('active','entering');
-  setTimeout(()=>{ slides[current].classList.remove('entering'); },400);
-  dots.forEach((d,i)=>d.classList.toggle('active',i===current));
-  document.getElementById('photoCounter').textContent = `📸 ${current+1} / ${total}`;
-  resetAutoPlay();
-}
-
-function nextSlide() { goTo((current+1)%total,'next'); }
-function prevSlide() { goTo((current-1+total)%total,'prev'); }
-function resetAutoPlay() {
-  clearInterval(autoTimer);
-  autoTimer = setInterval(nextSlide, 3500);
-}
-resetAutoPlay();
-
-// ============ MUSIC (Web Audio API - Happy Birthday) ============
-let audioCtx = null;
-let playing = false;
-let noteScheduler = null;
-
-const notes = [
-  // Happy Birthday melody (freq, duration)
-  [261.63,0.3],[261.63,0.15],[293.66,0.45],[261.63,0.45],[349.23,0.45],[329.63,0.9],
-  [261.63,0.3],[261.63,0.15],[293.66,0.45],[261.63,0.45],[392.00,0.45],[349.23,0.9],
-  [261.63,0.3],[261.63,0.15],[523.25,0.45],[440.00,0.45],[349.23,0.45],[329.63,0.45],[293.66,0.9],
-  [466.16,0.3],[466.16,0.15],[440.00,0.45],[349.23,0.45],[392.00,0.45],[349.23,0.9]
-];
-
-function playHappyBirthday() {
-  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-  let t = audioCtx.currentTime + 0.1;
-  function scheduleNote(freq, dur, start) {
-    const osc  = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.connect(gain); gain.connect(audioCtx.destination);
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(freq, start);
-    gain.gain.setValueAtTime(0, start);
-    gain.gain.linearRampToValueAtTime(0.35, start+0.04);
-    gain.gain.linearRampToValueAtTime(0, start+dur-0.04);
-    osc.start(start); osc.stop(start+dur);
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function switchTab(id, el) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.getElementById('sec-' + id).classList.add('active');
+    if (el && el.classList.contains('nav-item')) el.classList.add('active');
   }
-  notes.forEach(([f,d])=>{ scheduleNote(f, d, t); t += d + 0.03; });
-  // Drum-ish accent
-  function kick(time) {
-    const osc = audioCtx.createOscillator();
-    const g   = audioCtx.createGain();
-    osc.connect(g); g.connect(audioCtx.destination);
-    osc.type='sine'; osc.frequency.setValueAtTime(120,time);
-    osc.frequency.exponentialRampToValueAtTime(40, time+0.15);
-    g.gain.setValueAtTime(0.6,time); g.gain.exponentialRampToValueAtTime(0.001,time+0.2);
-    osc.start(time); osc.stop(time+0.2);
+
+   function toggleDropdown(btn) {
+    const dd = btn.querySelector('.dropdown');
+    dd.classList.toggle('open');
+    document.addEventListener('click', function close(e) {
+      if (!btn.contains(e.target)) { dd.classList.remove('open'); document.removeEventListener('click', close); }
+    }, { once: false });
   }
-  for(let i=0;i<24;i++) kick(audioCtx.currentTime + 0.1 + i*0.38);
-  const totalDur = notes.reduce((a,[,d])=>a+d+0.03,0)*1000;
-  return totalDur;
-}
-
-function toggleMusic() {
-  const btn = document.getElementById('musicBtn');
-  if(!playing) {
-    const dur = playHappyBirthday();
-    playing = true;
-    btn.textContent = '🔇 STOP MUSIC 🔇';
-    btn.style.background = 'linear-gradient(135deg,#ff2d8e,#bf00ff)';
-    btn.style.color = 'white';
-    setTimeout(()=>{
-      playing = false;
-      btn.textContent = '🎵 PLAY AGAIN 🎵';
-      btn.style.background = 'linear-gradient(135deg,#ffdd00,#ff6b00)';
-      btn.style.color='#111';
-    }, dur);
-  } else {
-    if(audioCtx) audioCtx.close();
-    playing = false;
-    btn.textContent = '🎵 PLAY BIRTHDAY MUSIC 🎵';
-    btn.style.background = 'linear-gradient(135deg,#ffdd00,#ff6b00)';
-    btn.style.color = '#111';
-  }
-}
-
-// ============ EMOJI RAIN ============
-const emojis = ['🎂','🎉','🎈','🥳','⭐','✨','💫','🔥','👑','🎊','🍰','💥','🌟','💖','🎁'];
-const rain = document.getElementById('emojiRain');
-function spawnEmoji() {
-  const el = document.createElement('div');
-  el.className = 'falling-emoji';
-  el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
-  el.style.left = Math.random()*100+'vw';
-  el.style.fontSize = (20+Math.random()*20)+'px';
-  const dur = 4+Math.random()*4;
-  el.style.animationDuration = dur+'s';
-  el.style.animationDelay = '-'+Math.random()*dur+'s';
-  rain.appendChild(el);
-  setTimeout(()=>el.remove(), dur*1000+500);
-}
-setInterval(spawnEmoji, 300);
-for(let i=0;i<12;i++) spawnEmoji();
-
-// ============ CONFETTI ============
-const colors = ['#ff2d8e','#ffdd00','#00f5ff','#39ff14','#bf00ff','#ff6b00','#fff'];
-function spawnConfetti() {
-  const el = document.createElement('div');
-  el.className = 'confetti-piece';
-  el.style.left = Math.random()*100+'vw';
-  el.style.background = colors[Math.floor(Math.random()*colors.length)];
-  const dur = 3+Math.random()*4;
-  el.style.animationDuration = dur+'s';
-  el.style.animationDelay = '-'+Math.random()*dur+'s';
-  el.style.width  = (6+Math.random()*10)+'px';
-  el.style.height = (8+Math.random()*14)+'px';
-  el.style.transform = `rotate(${Math.random()*360}deg)`;
-  document.getElementById('confettiContainer').appendChild(el);
-  setTimeout(()=>el.remove(), dur*1000+500);
-}
-setInterval(spawnConfetti, 200);
-for(let i=0;i<20;i++) spawnConfetti();
-
-// ============ CURSOR GLITTER ============
-const glitterSymbols = ['✨','⭐','💫','🌟','✦','✧','*'];
-document.addEventListener('mousemove', e => {
-  if(Math.random()>0.55) return;
-  const el = document.createElement('div');
-  el.className = 'glitter-star';
-  el.textContent = glitterSymbols[Math.floor(Math.random()*glitterSymbols.length)];
-  el.style.left = e.clientX + (Math.random()*30-15) +'px';
-  el.style.top  = e.clientY + (Math.random()*30-15) +'px';
-  el.style.color = colors[Math.floor(Math.random()*colors.length)];
-  el.style.fontSize = (12+Math.random()*14)+'px';
-  el.style.position = 'fixed';
-  el.style.pointerEvents = 'none';
-  el.style.zIndex = 9999;
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(), 900);
-});
-
-// Touch glitter for mobile
-document.addEventListener('touchmove', e => {
-  const t = e.touches[0];
-  const el = document.createElement('div');
-  el.className = 'glitter-star';
-  el.textContent = glitterSymbols[Math.floor(Math.random()*glitterSymbols.length)];
-  el.style.left = t.clientX+'px';
-  el.style.top  = t.clientY+'px';
-  el.style.color = colors[Math.floor(Math.random()*colors.length)];
-  el.style.fontSize = '20px';
-  el.style.position='fixed'; el.style.pointerEvents='none'; el.style.zIndex=9999;
-  document.body.appendChild(el);
-  setTimeout(()=>el.remove(),900);
-});
 </script>
-</body>
-</html>
