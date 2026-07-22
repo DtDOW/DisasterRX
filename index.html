@@ -1,3 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DisasterRX — Training & Emergency Dashboard</title>
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap');
@@ -621,7 +630,7 @@
         </div>
       </div>
 
-      <div class="sos-form" id="sosForm">
+      <form class="sos-form" id="sosForm">
         <h3>Send an SOS request</h3>
         <div class="form-row">
           <label>Category</label>
@@ -640,22 +649,13 @@
           <label>Describe your issue</label>
           <textarea placeholder="Explain what you need help with..."></textarea>
         </div>
-        <button class="form-submit">Send SOS request →</button>
-      </div>
+        <button class="form-submit" type="submit">Send SOS request →</button>
+      </form>
 
-      <!-- <div class="sos-history">
+      <div class="sos-history" id="sosHistory">
         <h4>Previous requests</h4>
-        <div class="sos-hist-item">
-          <div class="hist-status" style="background: var(--green);"></div>
-          <div class="hist-txt">Help with brachial plexus anatomy — resolved</div>
-          <div class="hist-time">Apr 5</div>
-        </div>
-        <div class="sos-hist-item">
-          <div class="hist-status" style="background: var(--amber);"></div>
-          <div class="hist-txt">Step 1 exam schedule — in progress</div>
-          <div class="hist-time">Apr 7</div>
-        </div>
-      </div> -->
+        <div id="sosHistoryList"></div>
+      </div>
     </div>
 
   </main>
@@ -677,3 +677,75 @@
     }, { once: false });
   }
 </script>
+<script>
+  // SOS: persist submissions to localStorage and render history
+  (function(){
+    const form = document.getElementById('sosForm');
+    const historyList = document.getElementById('sosHistoryList');
+    const STORAGE_KEY = 'disasterrx_sos_history_v1';
+
+    function loadHistory() {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      try {
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) { return []; }
+    }
+
+    function saveHistory(arr) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+    }
+
+    function render() {
+      const items = loadHistory();
+      historyList.innerHTML = '';
+      if (!items.length) {
+        historyList.innerHTML = '<div style="color:var(--text2);font-size:13px">No requests yet.</div>';
+        return;
+      }
+      items.slice().reverse().forEach(it => {
+        const el = document.createElement('div');
+        el.className = 'sos-hist-item';
+        el.innerHTML = `<div class="hist-status" style="background:${it.statusColor};"></div>
+                        <div class="hist-txt">${escapeHtml(it.subject || it.category)} — ${escapeHtml(it.description || '')}</div>
+                        <div class="hist-time">${escapeHtml(it.time)}</div>`;
+        historyList.appendChild(el);
+      });
+    }
+
+    function escapeHtml(s){
+      if (!s) return '';
+      return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    }
+
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const category = form.querySelector('select').value;
+        const subject = form.querySelector('input').value.trim();
+        const description = form.querySelector('textarea').value.trim();
+        if (!subject && !description) {
+          alert('Please provide a subject or description.');
+          return;
+        }
+        const items = loadHistory();
+        const now = new Date();
+        const entry = {
+          category, subject, description,
+          time: now.toLocaleString(),
+          statusColor: '#f5a623'
+        };
+        items.push(entry);
+        saveHistory(items);
+        render();
+        form.reset();
+        // Scroll to history
+        document.getElementById('sosHistory').scrollIntoView({behavior:'smooth'});
+      });
+    }
+
+    // initial render
+    render();
+  })();
+</script>
+</body>
+</html>
